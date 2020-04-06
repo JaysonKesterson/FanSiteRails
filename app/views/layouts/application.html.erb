@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>FanSiteRails</title>
+    <title>Fandom</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <ul>
+  <% if current_fan %>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to current_fan.username, fan_path(current_fan) %></li>
+    <li><%= link_to "Log Out", signout_path %></li>
+  <% else %>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Sign Up", new_fan_path %></li>
+    <li><%= link_to "Log In", signin_path %></li>
+  <% end %>
+</ul>
   </head>
 
   <body>
