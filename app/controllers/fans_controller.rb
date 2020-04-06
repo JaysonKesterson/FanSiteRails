@@ -4,6 +4,10 @@ class FansController < ApplicationController
         @fan = Fan.new
     end
 
+    def index
+      @fans = Fan.all
+    end
+
     def create
     @fan = Fan.new(fan_params)
     if @fan.save
