@@ -1,4 +1,5 @@
 class Fan < ApplicationRecord
-    has_many :teams, through: :sports
-    has_many :sports
+    has_secure_password
+    has_many :sports, through: :teams
+    has_many :teams
 end
