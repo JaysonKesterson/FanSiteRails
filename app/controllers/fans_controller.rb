@@ -6,6 +6,9 @@ class FansController < ApplicationController
 
     def index
       @fans = Fan.all
+      @basketball_teams = Team.where(sport: "Basketball")
+      @football_teams = Team.where(sport: "Football")
+      @baseball_teams = Team.where(sport: "Baseball")
     end
 
     def create
