@@ -1,2 +1,7 @@
 <h1> Welcome <%= current_fan.username %> </h1>
 <h2> List of your current teams </h2>
+<%= current_fan.teams.each do |t| %>
+    <%= t.teamname %>
+    <%= t.city %>
+    <%= t.sport %>
+<% end %>
