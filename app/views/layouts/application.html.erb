@@ -10,7 +10,7 @@
     <ul>
   <% if current_fan %>
     <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to current_fan.username, fan_path(current_fan) %></li>
+    <li><%= link_to "Your Profile", fan_path(current_fan) %></li>
     <li><%= link_to "Log Out", signout_path %></li>
   <% else %>
     <li><%= link_to "Home", root_path %></li>
