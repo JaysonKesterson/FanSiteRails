@@ -1,3 +1,14 @@
-<% @fans.each do |fan| %>
-    <%= fan.username %>
+<h1>Welcome to Fandom!</h1>
+<h3>Fans come from far and wide to unite here on Fandom. Represent your favorite teams, research the teams with the most fans.</h3>
+<h3>Basketball Teams on Fandom:</h3>
+<% @basketball_teams.each do |team| %>
+    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <br>
+<% end %>
+<h3>Football Teams on Fandom:</h3>
+<% @football_teams.each do |team| %>
+    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <br>
+<% end %>
+<h3>Baseball Teams on Fandom:</h3>
+<% @baseball_teams.each do |team| %>
+    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <br>
 <% end %>
