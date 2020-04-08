@@ -1,0 +1,12 @@
+<h1>Add a New Team You Are a Fan Of!</h1>
+<%= form_for(@team) do |f| %>
+    <%= f.label "Select a Team from the List or Create your own team" %>
+    <%= collection_select :team, :teamname, Team.all, :id, :teamname %> <br>    
+<%= f.label :teamname %> 
+<%= f.text_field :teamname %> <br>
+<%= f.label :city %>
+<%= f.text_field :city %> <br>
+<%= f.label :sport %>
+<%= f.text_field :sport %> <br>
+<%= f.submit %>
+<% end %>

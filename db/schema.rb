@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_08_140701) do
+ActiveRecord::Schema.define(version: 2020_04_08_141440) do
+
+  create_table "fan_teams", force: :cascade do |t|
+    t.integer "fan_id"
+    t.integer "team_id"
+    t.boolean "die_hard_fan"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "fans", force: :cascade do |t|
     t.string "username"
@@ -29,8 +37,6 @@ ActiveRecord::Schema.define(version: 2020_04_08_140701) do
   create_table "teams", force: :cascade do |t|
     t.string "teamname"
     t.string "city"
-    t.integer "sport_id"
-    t.integer "fan_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sport"

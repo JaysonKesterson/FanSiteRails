@@ -3,8 +3,6 @@ class CreateTeams < ActiveRecord::Migration[6.0]
     create_table :teams do |t|
       t.string :teamname
       t.string :city
-      t.integer :sport_id
-      t.integer :fan_id
       t.timestamps
     end
   end

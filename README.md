@@ -5,6 +5,9 @@ application up and running.
 
 Things you may want to cover:
 
+<%= f.label "Select a Team from the List or Create your own team" %>
+<%= collection_select :team, :teamname, Team.all, :id, :teamname %> <br>
+
 * Ruby version
 
 * System dependencies
