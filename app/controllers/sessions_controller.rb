@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       end
     
       def create
-        if params[:fan][:username].present?
+        if params[:fan]
             @fan = Fan.find_by(username: params[:fan][:username])
             if @fan && @fan.authenticate(params[:fan][:password])
                 session[:fan_id] = @fan.id 
@@ -14,12 +14,18 @@ class SessionsController < ApplicationController
                 redirect_to signin_path
             end
         else
-            @fan = Fan.find_or_create_by(uid: auth['uid']) do |f|
-                f.username = auth['info']['name']
-                f.email = auth['info']['email']
-            end
+            if @fan = Fan.find_by(email: auth[:info]['email'])
                 session[:fan_id] = @fan.id
-                render root_path
+                redirect_to fan_path(@fan)
+            else
+                @fan = Fan.new(email: auth[:info]['email'], username: auth[:info]['name'], password: SecureRandom.hex)
+                  if @fan.save
+                    session[:fan_id] = @fan.id
+                    redirect_to fan_path(@fan)
+                  else
+                    render :new
+                  end
+            end
         end
       end
     
