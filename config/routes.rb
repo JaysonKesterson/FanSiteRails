@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'fans#index'
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
   resources :fans
 
