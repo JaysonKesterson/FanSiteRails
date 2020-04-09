@@ -1,7 +1,13 @@
 <h1> Welcome <%= current_fan.username %> </h1>
-<h2> List of your current teams </h2>
-<%= current_fan.teams.each do |t| %>
-    <%= t.teamname %>
-    <%= t.city %>
-    <%= t.sport %>
+<h2> My Basketball Teams: </h2>
+<% my_basketball_teams.each do |t| %>
+    <h3><%= t.city %> <%= t.teamname %></h3>
+<% end %>
+<h2> My Baseball Teams: </h2>
+<% my_baseball_teams.each do |t| %>
+    <h3><%= t.city %> <%= t.teamname %></h3>
+<% end %>
+<h2> My Football Teams: </h2>
+<% my_football_teams.each do |t| %>
+    <h3><%= t.city %> <%= t.teamname %></h3>
 <% end %>
