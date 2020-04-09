@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
                 session[:fan_id] = @fan.id
                 redirect_to fan_path(@fan)
             else
-                @fan = Fan.new(email: auth[:info]['email'], username: auth[:info]['name'], password: SecureRandom.hex)
+                @fan = Fan.new(email: auth[:info]['email'], username: auth[:info]['name'], password: SecureRandom.hex, uid: auth['uid'])
                   if @fan.save
                     session[:fan_id] = @fan.id
                     redirect_to fan_path(@fan)
