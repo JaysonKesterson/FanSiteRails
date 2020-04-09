@@ -12,9 +12,10 @@
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "Your Profile", fan_path(current_fan) %></li>
     <li><%= link_to "Log Out", signout_path %></li>
+    <li><%= link_to "Add a Team", new_team_path %></li>
   <% else %>
     <li><%= link_to "Home", root_path %></li>
-    <li><%= link_to "Sign Up", new_fan_path %></li>
+    <li><%= link_to "Sign Up", signup_path %></li>
     <li><%= link_to "Log In", signin_path %></li>
   <% end %>
 </ul>
