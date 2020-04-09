@@ -1,5 +1,5 @@
 <h1>Create a New Fandom Account!</h1>
-<%= form_for(@fan) do |f| %>
+<%= form_for @fan, url: signup_path do |f| %>
 <%= f.label :email %> 
 <%= f.text_field :email %> <br>
 <%= f.label :username %>
@@ -7,4 +7,9 @@
 <%= f.label :password %>
 <%= f.text_field :password%> <br>
 <%= f.submit %>
+<% end %>
+<% @fan.errors.full_messages.each do |m| %>
+    <div class="errors" >
+    <%= m %> <br>
+    </div>
 <% end %>
