@@ -6,9 +6,6 @@ class FansController < ApplicationController
 
     def index
       @fans = Fan.all
-      @basketball_teams = Team.where(sport: "Basketball")
-      @football_teams = Team.where(sport: "Football")
-      @baseball_teams = Team.where(sport: "Baseball")
     end
 
     def create
@@ -17,7 +14,7 @@ class FansController < ApplicationController
       session[:fan_id] = @fan.id
       redirect_to fan_path(@fan)
     else
-      redirect_to fans_path
+      render :new
     end
     end
 
