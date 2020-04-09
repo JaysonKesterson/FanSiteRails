@@ -1,14 +1,21 @@
 <h1>Welcome to Fandom!</h1>
-<h3>Fans come from far and wide to unite here on Fandom. Represent your favorite teams, research the teams with the most fans.</h3>
+<%= image_tag("lebron.jpg", size: "200x150")%><%= image_tag("clay.jpg", size: "200x150")%><%= image_tag("baseball.jpg", size: "200x150")%>
+<h2>Fans come from far and wide to unite here on Fandom. Represent your favorite teams. Research the teams with the most fans.</h2>
+<div class="basketball">
 <h3>Basketball Teams on Fandom:</h3>
-<% @basketball_teams.each do |team| %>
-    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <br>
+</div>
+<% basketball_teams.each do |team| %>
+    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <%= link_to "Team Page", team_path(team) %> <br>
 <% end %>
+<div class="football">
 <h3>Football Teams on Fandom:</h3>
-<% @football_teams.each do |team| %>
-    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <br>
+</div>
+<% football_teams.each do |team| %>
+    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <%= link_to "Team Page", team_path(team) %><br>
 <% end %>
+<div class="baseball">
 <h3>Baseball Teams on Fandom:</h3>
-<% @baseball_teams.each do |team| %>
-    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <br>
+</div>
+<% baseball_teams.each do |team| %>
+    <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <%= link_to "Team Page", team_path(team) %><br>
 <% end %>
