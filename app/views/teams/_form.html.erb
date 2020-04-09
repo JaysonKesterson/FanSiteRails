@@ -1,0 +1,15 @@
+<%= form_for(@team) do |f| %> 
+    <%= f.label :teamname %> 
+    <%= f.text_field :teamname %> <br>
+    <%= f.label :city %>
+    <%= f.text_field :city %> <br>
+    <%= f.label :sport %>
+    <%= f.select(:sport, ["Baseball", "Basketball", "Football"]) %> <br>
+    <%= f.fields_for :fan_teams do |ft| %>
+        <%= ft.label :die_hard_fan %>
+        <%= ft.check_box :die_hard_fan %> <br>
+        <%= ft.hidden_field :fan_id, :value => current_fan.id %>
+    <% end %>
+    <%= f.submit %>
+    <% end %>
+    
