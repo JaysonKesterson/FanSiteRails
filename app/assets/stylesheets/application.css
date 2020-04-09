@@ -16,16 +16,56 @@
  @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.errors {
+    color: red;
+}
+
+.field_with_errors input {
+    border: 1px solid red;
+}
+
+.basketball{
+    color: #F3490A;
+}
+
+.football{
+    color: #6A3B2A;
+}
+
+.baseball{
+    color: #7EDCE0;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: black;
   }
   
   li {
     float: left;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  a {
+    background-color: black;
+    border: 1px solid #4E4E4E;
+    color: white;
+    padding: 1px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  a:hover {
+    background-color: green;
   }
   
   li a {
@@ -35,8 +75,13 @@ ul {
     padding: 14px 16px;
     text-decoration: none;
   }
-  
   /* Change the link color to #111 (black) on hover */
   li a:hover {
-    background-color: #111;
+    background-color: green;
+  }
+
+  body {
+    background-color: black;
+   color: white;
+   font-family: Arial, Helvetica, sans-serif;
   }
