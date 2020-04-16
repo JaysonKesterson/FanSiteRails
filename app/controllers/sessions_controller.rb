@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
                 session[:fan_id] = @fan.id 
                 redirect_to fan_path(@fan)
             else
-                redirect_to signin_path
+              flash[:error] = "Sorry, login info was incorrect. Please try again."
+              redirect_to signin_path
             end
         else
             if @fan = Fan.find_by(email: auth[:info]['email'])
