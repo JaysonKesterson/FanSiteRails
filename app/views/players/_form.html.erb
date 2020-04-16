@@ -7,8 +7,9 @@
 <%= f.submit %>
 <% end %>
 
-<% @player.errors.full_messages do |m| %>
+
+<% @player.errors.full_messages.each do |m| %>
     <div class ="errors">
     <%= m %>
     </div>
-    <% end %>
+<% end %>
