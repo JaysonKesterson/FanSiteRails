@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_09_155645) do
+ActiveRecord::Schema.define(version: 2020_04_12_150343) do
 
   create_table "fan_teams", force: :cascade do |t|
     t.integer "fan_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_04_09_155645) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "sport"
+    t.integer "fancount"
   end
 
 end
