@@ -1,5 +1,9 @@
 <h1><%= @team.city %> <%= @team.teamname %></h1>
 <h2>Sport: <%= @team.sport %></h2>
 <h2>Number of Total Fans: <%= @team.fans.count %> </h2>
+<h2>Number of Total Players: <%= @team.players.count %> </h2>
 <%= link_to "View Players Currently Added on This Team", team_players_path(@team)%> <br>
-<%= link_to "Add a Player From This Team", new_team_player_path(@team)%>
+<%= link_to "Add a Player From This Team", new_team_player_path(@team)%> <br>
+<% if current_fan.teams.ids.include?(params[:id].to_i) %>
+<%= link_to "Remove Team from your Fan List", remove_path %>
+<% end %>
