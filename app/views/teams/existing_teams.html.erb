@@ -1,0 +1,16 @@
+<h2>Become a Fan of an Existing Team</h2>
+<%= form_for(@team, url: {action: "add"}, method: :post) do |f| %> 
+    <%= f.label "Choose from existing teams" %> 
+    <%= f.collection_select :id, Team.all, :id, :teamname %><br />
+    <%= f.fields_for :fan_teams do |ft| %>
+        <%= ft.label "Are you a Die Hard Fan?" %>
+        <%= ft.check_box :die_hard_fan %> <br>
+        <%= ft.hidden_field :fan_id, :value => current_fan.id %>
+    <% end %>
+    <%= f.submit %>
+    <% end %>
+    <% @fanteam.errors.messages[:team_id].each do |m| %>
+        <div class="errors" >
+        <%= m %> <br>
+        </div>
+    <% end %>
