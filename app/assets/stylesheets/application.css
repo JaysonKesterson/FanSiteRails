@@ -40,6 +40,10 @@
     color: green;
 }
 
+.fandom {
+    color: green;
+}
+
 h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -57,7 +61,9 @@ ul {
     font-family: Arial, Helvetica, sans-serif;
   }
 
-  a {
+  
+
+  .teams-list a {
     background-color: black;
     border: 1px solid #4E4E4E;
     color: white;
@@ -88,4 +94,39 @@ ul {
     background-color: black;
    color: white;
    font-family: Arial, Helvetica, sans-serif;
+  }
+  .nav-menu {
+    background: linear-gradient(115deg, rgba(0,0,0,1) 0%, rgba(66,172,77,1) 69%, rgba(14,98,22,1) 100%) !important;
+    font-weight: 600 !important;
+    padding: 0px;
+  }
+
+  .index {
+      padding: 20px;
+  }
+
+  .my_teams a {
+    background-color: black;
+    border: 1px solid #4E4E4E;
+    color: white;
+    padding: 1px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+  }
+
+  .my_teams a:hover {
+    background-color: green;
+  }
+
+  .teams a {
+    background-color: black;
+    border: 1px solid #4E4E4E;
+    color: white;
+    padding: 1px 1px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
   }
