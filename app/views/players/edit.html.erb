@@ -1,0 +1,16 @@
+<h2>Edit Player</h2>
+<%= form_for(@player, :url => {:action => "update"}) do |f| %>
+<%= f.label :playername %>
+<%= f.text_field :playername %>
+<%= f.label :position %>
+<%= f.text_field :position%>
+<%= f.hidden_field :team_id %>
+<%= f.submit %>
+<% end %>
+
+
+<% @player.errors.full_messages.each do |m| %>
+    <div class ="errors">
+    <%= m %>
+    </div>
+<% end %>
