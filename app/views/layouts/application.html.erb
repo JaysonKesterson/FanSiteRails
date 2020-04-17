@@ -7,12 +7,11 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <ul>
+    <ul class="nav-menu">
   <% if current_fan %>
     <li><%= link_to "Home", root_path %></li>
     <li><%= link_to "Your Profile", fan_path(current_fan) %></li>
     <li><%= link_to "Log Out", signout_path %></li>
-    <li><%= link_to "Choose From Existing Teams", add_existing_teams_path %></li>
     <li><%= link_to "Add a Team", new_team_path %></li>
   <% else %>
     <li><%= link_to "Home", root_path %></li>
