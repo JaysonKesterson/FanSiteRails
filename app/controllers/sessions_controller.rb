@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
         @fan = Fan.new
       end
     
-      def create
+    def create
         if params[:fan]
             @fan = Fan.find_by(username: params[:fan][:username])
             if @fan && @fan.authenticate(params[:fan][:password])
