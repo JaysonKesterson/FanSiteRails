@@ -1,5 +1,5 @@
 class FansController < ApplicationController
-
+  before_action :logged_in, only:[:show]
     def new
         @fan = Fan.new
     end
