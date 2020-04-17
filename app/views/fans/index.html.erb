@@ -1,10 +1,12 @@
-<div class = "diehard">
+<div class = "index">
+<div class = "fandom">
 <h1>Welcome to Fandom!</h1>
 </div>
 <%= image_tag("lebron.jpg", size: "200x150")%><%= image_tag("clay.jpg", size: "200x150")%><%= image_tag("baseball.jpg", size: "200x150")%>
 <h2>Fans come from far and wide to unite here on Fandom. Represent your favorite teams. Research the teams with the most fans.</h2>
-<h2>If you want to join a pre-existing team from below click 'Choose from Existing Teams'.</h2>
 <h2>If your team doesn't exist, create it through 'Add a Team'.</h2>
+<h2>Add Players to their Teams, or Join a team through their Team Page.</h2>
+<div class="teams-list">
 <div class="basketball">
 <h3>Basketball Teams on Fandom:</h3>
 </div>
@@ -40,3 +42,5 @@
     <% else %>
     <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <%= link_to "#{team.teamname} Page", team_path(team) %><br>
 <% end %><% end %>
+</div>
+</div>
