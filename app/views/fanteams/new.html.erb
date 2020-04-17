@@ -1,0 +1,9 @@
+<h2>Become a fan</h2>
+<%= form_for @fanteam, :url => {:action => "create"} do |ft| %>
+<%= ft.label "Are you a Die Hard Fan?" %>
+<%= ft.check_box :die_hard_fan %> <br>
+<%= ft.hidden_field :fan_id, :value => current_fan.id %>
+<%= ft.hidden_field :team_id, :value => params[:team_id] %>
+<%= ft.submit %>
+<% end %>
+    
