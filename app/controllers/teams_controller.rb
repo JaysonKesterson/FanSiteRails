@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-    before_action :logged_in, only:[:new, :create, :delete, :existing_teams, :add]
+    before_action :logged_in, only:[:new, :create]
 
     def new
         @team = Team.new
