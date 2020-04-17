@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-    before_action :logged_in, only:[:create, :new]
+    before_action :logged_in, only:[:create, :new, :edit, :update, :delete]
     def new
         @player = Player.new(team_id: params[:team_id])
       end
@@ -27,6 +27,26 @@ class PlayersController < ApplicationController
         @team = Team.find_by(id: params[:team_id])
         @players = @team.players
     end
+
+    def edit
+        @player = Player.find_by(id: params[:id])
+    end
+
+    def update
+        @player = Player.find_by(id: params[:id])
+        if @player.update(player_params)
+            redirect_to team_players_path
+        else 
+            render :edit
+        end
+    end
+
+    def destroy
+        @player = Player.find_by(id: params[:id])
+        @player.destroy
+        redirect_to team_players_path
+    end 
+
 
     private
 
