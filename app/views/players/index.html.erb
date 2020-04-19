@@ -2,5 +2,6 @@
 <div class = "my_teams">
 <% @team.players.each do |player| %>
     <%= player.position %> <%= player.playername %> <%= link_to "Edit Player", edit_team_player_path(@team, player) %> <%= link_to "Delete Player", team_player_path(@team, player), method: :delete %><br><br>
-<% end %> 
+<% end %>  
+<br> <h2>Want to Add More Players?</h2> <%= link_to "Add New Player", new_team_player_path(@team)%>
 </div>
