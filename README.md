@@ -1,26 +1,10 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an application designed for Flatiron's rails portfolio project. Users are fans and can add many teams that they are 
+fans of and these created teams have many fans. Players can also be added to teams through nested resources.
 
-Things you may want to cover:
+To get this application up and running first run rails s to start a locally hosted server
+Head to localhost:3000 in your browser and get started with the application
 
-<%= link_to "Remove Team", remove_path %>
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
