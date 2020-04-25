@@ -10,7 +10,7 @@
 <div class="basketball">
 <h3>Basketball Teams on Fandom:</h3>
 </div>
-<% basketball_teams.each do |team| %>
+<% Team.basketball_teams.each do |team| %>
     <% if my_diehard_teams.include?(team) %>
         <div class = "diehard">
             <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <%= link_to "#{team.teamname} Page", team_path(team) %> <br>
@@ -22,7 +22,7 @@
 <div class="football">
 <h3>Football Teams on Fandom:</h3>
 </div>
-<% football_teams.each do |team| %>
+<% Team.football_teams.each do |team| %>
     <% if my_diehard_teams.include?(team) %>
         <div class = "diehard">
         <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <%= link_to "#{team.teamname} Page", team_path(team) %><br>
@@ -34,7 +34,7 @@
 <div class="baseball">
 <h3>Baseball Teams on Fandom:</h3>
 </div>
-<% baseball_teams.each do |team| %>
+<% Team.baseball_teams.each do |team| %>
     <% if my_diehard_teams.include?(team) %>
     <div class = "diehard">
     <%= team.city %> <%= team.teamname %> |  Fan Count <%= team.fans.count %> <%= link_to "#{team.teamname} Page", team_path(team) %><br>
