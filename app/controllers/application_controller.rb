@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
     helper_method :current_fan, :logged_in
-    helper_method :basketball_teams, :baseball_teams, :football_teams
     helper_method :my_basketball_teams, :my_baseball_teams, :my_football_teams, :my_diehard_teams
     
 
@@ -12,33 +11,6 @@ class ApplicationController < ActionController::Base
         if !session[:fan_id]
             redirect_to signin_path
         end
-    end
-
-    def basketball_teams
-        @basketball_teams = Team.where(sport: "Basketball")
-        @basketball_teams.each do |team|
-            team.fancount = team.fans.count
-            team.save
-        end
-        @basketball_teams_ordered = @basketball_teams.order(fancount: :desc)
-    end
-
-    def baseball_teams
-        @baseball_teams = Team.where(sport: "Baseball")
-        @baseball_teams.each do |team|
-            team.fancount = team.fans.count
-            team.save
-        end
-        @baseball_teams_ordered = @baseball_teams.order(fancount: :desc)
-    end
-
-    def football_teams
-        @football_teams = Team.where(sport: "Football")
-        @football_teams.each do |team|
-            team.fancount = team.fans.count
-            team.save
-        end
-        @football_teams_ordered = @football_teams.order(fancount: :desc)
     end
 
     def my_basketball_teams
