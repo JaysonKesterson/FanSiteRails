@@ -1,7 +1,7 @@
 <h1><%= @team.city %> <%= @team.teamname %></h1>
 <div class = "my_teams">
 <% @team.players.each do |player| %>
-    <%= player.position %> <%= player.playername %> <%= link_to "Edit Player", edit_team_player_path(@team, player) %> <%= link_to "Delete Player", team_player_path(@team, player), method: :delete %><br><br>
+    <%= player.position %> <%= player.playername %> <% if current_fan %><%= link_to "Edit Player", edit_team_player_path(@team, player) %> <%= link_to "Delete Player", team_player_path(@team, player), method: :delete %><% end %><br><br>
 <% end %>  
 <br> <h2>Want to Add More Players?</h2> <%= link_to "Add New Player", new_team_player_path(@team)%>
 </div>
